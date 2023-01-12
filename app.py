@@ -3,7 +3,7 @@ from tkinter import ttk
 import json
 
 
-def first()
+def first():
     return 0
 def second():
     return 0
@@ -17,6 +17,10 @@ command = {
     "دما صعودی":third 
 }
 
+value = []
+for x in command:
+    value.append(x)
+
 tk.title("Chemistry Project")
 
 
@@ -24,9 +28,8 @@ tk.title("Chemistry Project")
 label = Label(tk,text="لطفا یکی از شرایط زیر را انتخاب بکنید")
 label.pack()
 
-combo = ttk.Combobox(width=100,values=["دما صعودی","دما نزولی","رسوب"])
+combo = ttk.Combobox(width=100,values=value)
 combo.pack()
-
-command[combo]()
+print(combo.get())
 
 tk.mainloop()
