@@ -1,0 +1,27 @@
+def tarkib(sx,sy,x,y):
+    if x > 4:
+        b1 = 8 - x
+        xd = str(sx) + str(b1)+"-"
+    elif x < 4:
+        b1 = x
+        xd = str(sx) + str(b1) + "+"
+    else:
+        return False
+    if y > 4:
+        b2 = 8 - y
+        yd = str(sy) + str(b2) + "-"
+    elif y < 4:
+        b2 = y
+        yd = str(sy) + str(b2) + "+"
+    else:
+        return False
+
+    if b1 == b2:
+        x1 = sx+sy
+    else:
+        x1 = sx+str(b2)+sy+str(b1)
+    return {
+        "x" : xd,
+        "y" : yd,
+        "result" : x1
+    }
