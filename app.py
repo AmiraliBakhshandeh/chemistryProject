@@ -11,7 +11,7 @@ import json
 
 
 def findit():
-    messagebox.showinfo("راهنما", "با سلام استاد شاهی عزیز . این نرم افزار توسط امیرعلی بخشنده و پندار احمدی 903 ساخته شده است. این نرم افزار توانایی نشان دادن تمامی عناصر جدول تناوبی را در مدل بور و نشان دادن پیوند  یونی بین دو عنصر را دارد که روز ها برای آن زحمت کشیده شده است . امیدواریم از آن لذت ببرید")
+    messagebox.showinfo("راهنما", "با سلام استاد شاهی عزیز . این نرم افزار توسط امیرعلی بخشنده و پندار احمدی 903 ساخته شده است. این نرم افزار توانایی نشان دادن تمامی عناصر جدول تناوبی را در مدل بور  دارد که روز ها برای آن زحمت کشیده شده است . امیدواریم از آن لذت ببرید")
 
     val1 = e1.get().capitalize()
     val2 = e2.get().capitalize()
@@ -50,11 +50,7 @@ def findit():
     l7.config(text=' تناوب :'+str(len(list4))+ ' گروه : ' + str(list4[-1]))
     l8.config(text=val1)
     l9.config(text=val2)
-    if ionCompound == False:
-            l10.config(text=f'ترکیب یونی : ترکیب نمیشود')
-    else:       
-        l10.config(text=f'ترکیب یونی : {ionCompound["x"]},{ionCompound["y"]} => {ionCompound["result"]}')
-
+    
     alghorithm.Circle(draw, list3)
     alghorithm.Circle(draw2, list4)
 
@@ -73,7 +69,6 @@ l6 = Label()
 l7 = Label()
 l8 = Label()
 l9 = Label()
-l10 = Label()
 canvas = Canvas(master, width = 200, height = 200)
 canvas2 = Canvas(master, width = 200, height = 200)
 
@@ -89,7 +84,6 @@ l6.grid(row = 4,column=1,pady = 2)
 l7.grid(row = 5,column=1,pady = 2)
 l8.grid(row = 7,column=0,pady = 2)
 l9.grid(row = 7,column=1,pady = 2)
-l10.grid(row = 6,column=0,pady=2)
 canvas.grid(row=8, column=0,pady=2) 
 canvas2.grid (row=8, column=1) 
 
