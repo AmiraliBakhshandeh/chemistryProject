@@ -1,35 +1,34 @@
 from tkinter import *
-from tkinter import ttk
-import json
+import periodic_elems
 
 
-def first():
-    return 0
-def second():
-    return 0
-def third():
-    return 0
+
+def findit():
+    val1 = entry1.get().capitalize()
+    val2 = entry2.get().capitalize()
+    
+    
+
+    execute = f"label1.config(text='{val1}:'+str(periodic_elems.Element().{val1}))"
+    execute2 = f"label2.config(text='{val2}:'+str(periodic_elems.Element().{val2}))"
+
+    exec(execute) 
+
+    exec(execute2) 
+    
 
 tk = Tk()
-command = {
-    "رسوب":first,
-    "دما نزولی":second,
-    "دما صعودی":third 
-}
+tk.title("بدست آوردن پیوند یونی")
 
-value = []
-for x in command:
-    value.append(x)
+entry1  = Entry(width=200)
+entry1.pack()
+entry2  = Entry(width=200)
+entry2.pack()
 
-tk.title("Chemistry Project")
-
-
-
-label = Label(tk,text="لطفا یکی از شرایط زیر را انتخاب بکنید")
-label.pack()
-
-combo = ttk.Combobox(width=100,values=value)
-combo.pack()
-print(combo.get())
-
+label1 = Label()
+label1.pack()
+label2 = Label()
+label2.pack()
+button = Button(text='get Elem',command=lambda:findit())
+button.pack()
 tk.mainloop()
