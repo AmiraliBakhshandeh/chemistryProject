@@ -47,7 +47,7 @@ def Circle(draw,list):
                 circumference = circumference + arcs
     electrons_per_level = []
     levels = len(list)
-    first_level_radius = 45
+    first_level_radius = 25
 
     for i in range(levels):
         e = list[i]
@@ -60,8 +60,6 @@ def Circle(draw,list):
         pen.pendown()
 
     def turtle_pen(shape="turtle", speed=10, size=3, colors=("blue", "green")):
-        
-        
         draw.shape(shape)
         draw.speed(speed)
         draw.pensize(size)
@@ -74,34 +72,34 @@ def Circle(draw,list):
     pen = turtle_pen()
     draw_atom(pen, first_level_radius, levels, electrons_per_level)
     turtle_teardown(pen)
+    
+    
 
 def IonCompound(sx,sy,x,y):
-
-    xtest = False
-    ytest = False
+    xtest = 0
+    ytest = 0
     if x > 4:
         b1 = 8 - x
         xd = str(sx) + str(b1)+"-"
+        xtest = -1
     elif x < 4:
         b1 = x
         xd = str(sx) + str(b1) + "+"
-        xtest = True
-    else:
-        return False
+        xtest=1
+    if b1==4 or b1==8 or b1==0:
+        return 0
     if y > 4:
         b2 = 8 - y
         yd = str(sy) + str(b2) + "-"
+        ytest = -1
     elif y < 4:
         b2 = y
         yd = str(sy) + str(b2) + "+"
-        ytest = True
-    else:
-        return False
-
-    if ytest == True and xtest == True:
-        return False
-    if ytest == False and xtest == False:
-        return False
+        ytest = 1
+    if b2 == 4 or b2 == 8 or b2==0:
+        return 0
+    if ytest==xtest:
+        return 0
 
     if b1 == b2:
         x1 = sx+sy

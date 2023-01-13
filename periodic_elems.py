@@ -10,7 +10,7 @@ class Element:
     Ta, W, Re, Os, Ir, Pt, Au, Hg, Tl, Pb, Bi, Po, At, Rn = list(range(73, 87))
     Fr, Ra, Ac, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm = list(range(87, 101))
     Md, No, Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Uut = list(range(101, 114))
-    Fl, Uup, Lv, Uus, Uuo = list(range(114, 119))
+    Fl, Mc, Lv, Ts, Og = list(range(114, 119))
 
 
 class Category:
@@ -2282,7 +2282,7 @@ ELEMENTS_DATA = {
         "x": 14,
         "y": 7
     },
-    Element.Uup: {
+    Element.Mc: {
         "name": _("Moscovium"),
         "atomic-mass": 289,
         "boil": 1400,
@@ -2320,7 +2320,7 @@ ELEMENTS_DATA = {
         "x": 16,
         "y": 7
     },
-    Element.Uus: {
+    Element.Ts: {
         "name": _("Tennessine"),
         "atomic-mass": 294,
         "boil": 883,
@@ -2339,7 +2339,7 @@ ELEMENTS_DATA = {
         "x": 17,
         "y": 7
     },
-    Element.Uuo: {
+    Element.Og: {
         "name": _("Oganesson"),
         "atomic-mass": 294,
         "boil": 35030,
